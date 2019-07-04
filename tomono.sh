@@ -1,0 +1,15 @@
+#github_org=lgtm
+#my_repos="_general client nginx server worker"
+my_repos="_general"
+src_dir=./
+git checkout -b monorepo-migration
+
+for repo in $(echo $my_repos); do
+  git remote add $repo file://${pwd}/../114-Checkpoint/$repo
+  git fetch $repo
+  git read-tree --prefix=$src_dir/$repo -u $repo/master
+  git add $src_dir/$repo
+  git commit -m "Migrated $repo to $src_dir/$repo"
+done
+
+git push -u origin HEAD
