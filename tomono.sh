@@ -1,3 +1,6 @@
+#!/bin/bash
+set -euxo pipefail
+
 #github_org=lgtm
 #my_repos="_general client nginx server worker"
 my_repos="_general"
