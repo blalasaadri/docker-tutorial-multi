@@ -2,8 +2,8 @@
 set -euxo pipefail
 
 #github_org=lgtm
-#my_repos="_general client nginx server worker"
-my_repos="_general"
+#my_repos="general client nginx server worker"
+my_repos="general"
 src_dir=./
 git checkout -b monorepo-migration
 
