@@ -2,8 +2,8 @@
 set -euxo pipefail
 
 #github_org=lgtm
-#my_repos="general client nginx server worker"
-my_repos="general"
+my_repos="general client nginx server worker"
+#my_repos="general"
 #src_dir=./
 git checkout -b monorepo-migration
 
@@ -15,4 +15,4 @@ for repo in $(echo $my_repos); do
   git commit -m "Migrated $repo to $repo"
 done
 
-git push -u origin HEAD
+#git push -u origin HEAD
