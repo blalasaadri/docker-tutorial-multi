@@ -1,0 +1,37 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "docker-tutorial-multi-client",
+      "image": "blalasaadri/docker-tutorial-multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "docker-tutorial-multi-server",
+      "image": "blalasaadri/docker-tutorial-multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "docker-tutorial-multi-worker",
+      "image": "blalasaadri/docker-tutorial-multi-worker",
+      "essential": false
+    },
+    {
+      "name": "docker-tutorial-multi-nginx",
+      "image": "blalasaadri/docker-tutorial-multi-nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "docker-tutorial-multi-client",
+        "docker-tutorial-multi-server"
+      ]
+    }
+  ]
+}
