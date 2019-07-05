@@ -5,18 +5,21 @@
       "name": "docker-tutorial-multi-client",
       "image": "blalasaadri/docker-tutorial-multi-client",
       "hostname": "client",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "docker-tutorial-multi-server",
       "image": "blalasaadri/docker-tutorial-multi-server",
       "hostname": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "docker-tutorial-multi-worker",
       "image": "blalasaadri/docker-tutorial-multi-worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "docker-tutorial-multi-nginx",
@@ -31,7 +34,8 @@
       "links": [
         "docker-tutorial-multi-client",
         "docker-tutorial-multi-server"
-      ]
+      ],
+      "memory": 128
     }
   ]
 }
